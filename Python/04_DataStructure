@@ -43,9 +43,39 @@
 	합격
 
 #String(문자열)의 인덱싱(indexing) : 문자변수[인덱스]
+- String의 인덱싱은 인덱스 0붜 나열형으로 관리 / 역순은 음수 인덱스
+s = "HRD Korea" 
+s_count = len(s)
+print("문자열 : " + s) >>> 문자열 : HRD Korea
+print("문자열의 길이 : " + str(s_count)) >>> 문자열의 길이 : 9
 
+print(s[0]) >>> H
+print(s[1]) >>> R
+print(s[2]) >>> D
+print(s[9]) >>> 에러
+print(s[len(s)-1]) >>> a
+print(s[-1]) >>> a
 
+#String(문자열)의 슬라이싱(slicing) : [인덱스 시작 : 인덱스 끝 : 스텝]
+- 인덱스 시작 <= index < 인덱스 끝
+s3 = "HRDKorea"
+print(s3[0]) >>> H
+print(s3[0:3]) >>> HRD
+print(s3[:3]) >>> HRD
+print(s3[0:8]) >>> HRDKorea
+print(s3[0:]) >>> HRDKorea
+print(s3[;]) >>> HRDKorea
+print(s3[::2]) >>> HDoe
 
-
-
-
+str = "Hello World"
+print(str) >>> Hello World
+print(str.upper()) >>> HELLO WORLD
+print(str.lower()) >>> hello world
+printstr.captialize()) >>> Hellow world
+print(str.title()) >>> Hellow World
+print(str.count("l")) >>> 3
+print(str.find("l")) >>>2 제일 첫번째 나오는 l의 인덱스 위치
+print(str.split(" ")) >>> ["Hello", "World"]
+print(str.replace("l", "*")) >>>He**o Wor*d
+print(str) >>> Hello World
+해당 함수들은 변수의 값을 실질적으로 변경하지 않고 변경된 문자열을 반환만 하는 것이다.
