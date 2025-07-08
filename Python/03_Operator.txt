@@ -1,0 +1,82 @@
+### 파이썬03 연산자 ###
+
+# Python의 연산자
+- 연산자 연산 대상에 대한 연산동작을 지정하는 기호이다.
+- Python의 연산우선순위는 산술연산 > 관계연산 > 논리연산 순이다.
+- c언어나 Java의 증가(++)연산자, 감소(--)연산자, 삼항연산자는 없다.
+- 논리연산자는 not, and, or 이다.
+- 관계와 논리연산의 결과는 논리상수(=부울상수)인 'True'와 'False' 뿐이다.
+- 기타 연산자 is, is not, in, not in은 시퀀스형 자료구조에서 사용된다.
+
+#Python의 산술연산자
++,-,*
+/(나눗셈) ex) 3.3333
+%(나눗셈의 나머지) 
+//(나눗셈의 몫)  ex) 3
+**(거듭제곱)
+ 자바의 경우 Math.pow(2,3), c언어의 경우 pow(2,3)
+
+#Python의 관계연산자
+<, >, <=, >=, ==, !=
+	결과로는 True, False가 나옴
+	자바에서는 true, false로 나옴
+	c언어에서는 1, 0으로 나옴
+
+#Python의 논리연산자
+print(not True)
+	자바와 c언어에서는 !연산자로 대체함
+print(not False)
+print(True and True)
+print(True and False)
+print(True or Flase)
+
+#Python의 비트연산자
+print(~10) #not
+print(10 & 6) #and
+print(10 | 6) #or
+print(10^6) #xor
+print(10<<1) #left shift : 왼쪽 한칸 밀고 0으로 채우기
+print(10>>1) #right shift  : 오른쪽 한칸 밀고 이전 부호숫자 채우기
+	자바에서는 (10>>>1) #logical right shift 있음 : 오른쪽 한칸 밀고 0으로 채우기 
+
+-2의 보수 계산하기(2진수 음수의 10진수 계산)
+	1. 전체 비트를 반전 
+	2. 여기에 +1
+	3. 음수부호 붙이기
+	ex) 11110101 > 00001010 > 00001011 > 11 > -11 
+
+# Python의 대입 연산자와 복합 연산자
+a = 10
+a += 1
+a -= 2
+a *= 3
+a // 4
+print(a)
+
+#Python의 대입 연산자: 두 변수 교환(SWAP)
+- 방법 1
+v1 = 100
+v2 = 200
+print(v1, v2)
+temp = v1
+v1 = v2
+v2 = temp
+print(v1, v2)
+
+- 방법 2
+v1, v2 = 100, 200
+print(v1, v2)
+v1, v2 = v2, v1
+print(v1, v2)
+
+#Python의 기타 연산자 : is, is not, in, not in
+print("Python" is "Python") True
+print("PYTHON" is not "Python") True
+print("P" in "Python") True
+print("P" not in "Python") False
+
+nations = ["한국", "미국", "중국"]
+print("한국" in nations) True
+print("일본" in nations) False
+
+
