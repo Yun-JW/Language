@@ -1,0 +1,51 @@
+### 04_DataStructure ###
+
+# Python의 자료형(Data Types)과 자료구조(Data structure)=컬랙션
+- Numbers 
+	Integer - Boolean
+	Floating Point
+	Complex
+- None
+- Sequence
+	strings
+	Tuple
+	List
+- Set
+- Mapping
+	Dictionary
+- 알아야 할 것
+	배열(나열) 형식
+	인덱싱
+	슬라이싱
+	연결(+)과 반복* 연산자
+	자료 확인 : in 연산자
+# Python의 Strings
+- 모든 글자를 문자열(str)로 취급한다.
+	자바에서는 문자상수와 문자열상수를 구분한다.
+- 문자열은 문자들의 집합이다.
+- Python의 문자열은 홀따옴표 또는 쌍따옴표로 감싼다(혼용불가)
+- 'Python'과 "Python"은 동일한 문자열 상수 값이다.
+- Python의 모든 문자열은 Unicode이다.
+
+>>>print("i'm happy")
+	i'm happy
+>>> print('축! "합격"')
+	축! "합격"
+>>> print('''pass
+			DNA''')
+	pass
+	DNA
+>>> print("""정보처리
+
+			합격""")
+	정보처리
+
+	합격
+
+#String(문자열)의 인덱싱(indexing) : 문자변수[인덱스]
+
+
+
+
+
+
