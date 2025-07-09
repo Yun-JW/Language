@@ -67,6 +67,7 @@ print(s3[0:]) >>> HRDKorea
 print(s3[;]) >>> HRDKorea
 print(s3[::2]) >>> HDoe
 
+#String(문자열)의 함수
 str = "Hello World"
 print(str) >>> Hello World
 print(str.upper()) >>> HELLO WORLD
@@ -79,3 +80,163 @@ print(str.split(" ")) >>> ["Hello", "World"]
 print(str.replace("l", "*")) >>>He**o Wor*d
 print(str) >>> Hello World
 해당 함수들은 변수의 값을 실질적으로 변경하지 않고 변경된 문자열을 반환만 하는 것이다.
+
+jumin = "901225-1122345"
+print("생년 : " + jumin[0:2] + "년") >>> 생년 : 90년
+print("생월: " + jumin[2:4] + "월") >>> 생월 : 12월
+print("생일 : " + jumin[4:6] + "일") >>> 생일 : 25일
+print(jumin[0:8].ljust(14, "*")) >>> 901225-1*******  14개의 공간을 만들고 나앞에거에서 남은 부분을 "*"로 채워라
+age = 2020-1900-int(jumin[:2])+1
+print("나이 : " + str(age) + "살") >>> 나이 : 31살
+
+- 처음과 끝의 3글자 추출 코드
+	string[0:3] + string[-3:]
+
+-start, end, step의 기본 디폴트값 >>> 슬라이싱 시작, 슬라이싱 끝, 1
+- start가 있을땐 항상 왼쪽에서 오른쪽 방향
+	start가 default일때는 step 양수이면 왼쪽끝이 start, 음수이면 오른쪽 끝이start(end dafault도 똑같은 원리)
+
+
+#Python의 Tuple  () 소괄호
+- 튜플은 순서가 있는 불변이 객체들의 집합이다.
+- 한번 생성되면 값을 변경할 수 없다.
+- 튜플이 하나의 원소만 존재하는 경우는 튜플이 되지 않는다.
+- 소괄호 ()가 생략되어도 튜플 가능
+- 튜플의 형태 : 기본 튜플, 혼합 튜플, 중첩 튜플
+
+--- Tuple : 순서0, 불변, 여러 타입의 
+t = () 
+print(t) >>> ()
+t = (1, 3, 5, 3.14, 'HRD')
+print(t) >>>  (1, 3, 5, 3.14, 'HRD')
+print(t[0]) >>> 1
+print(t[0:2]) >>> (1, 3)
+print([::-1]) >>> ('HRD', 3.14, 5, 3, 1)
+print(len(t)) >>> 5
+# 튜플의 +, * 연산
+t = t + (100, 'PASS') >>> (1, 3, 5, 3.14, 'HRD', 100, 'PASS')
+print(t*2) >>>(1, 3, 5, 3.14, 'HRD', 100, 'PASS', 1, 3, 5, 3.14, 'HRD', 100, 'PASS')
+# 튜플의 in 연산
+print(3.14 in t) >>> True
+
+t = 1, 3
+print(t) >>> (1, 3)
+t[0] = 11 >>> 에러(변경 불가)
+***  3, "안녕", 3.14는 상수리터럴 이라고 한다.
+
+--- Tuple : 중첩 튜플(nested tuple) 
+t = ("Python", (1, 3, 5))
+print(t) >>> ('Python', (1, 3, 5))
+print(t[0]) >>> 'Python'
+print(t[1]) >>>(1,, 3, 5)
+print(t[1][0]) >>> 1
+print(t[1][1]) >>> 3
+print(t[1][2]) >>> 5
+print(t[0][0]) >>> P
+
+***파이썬에서는 문자열을 출력할 때, '작은따옴표'나 "큰따옴표" 중 하나를 선택해서 보여줄 뿐이다. 기본적으로 repr() 형식은 작은따옴표 '를 우선 사용합니다.
+
+#Python의 List 대괄호[ ]
+-리스트는 순서가 있는 가변의 객체들의 집합이다.
+-리스트의 형태: 기본리스트, 혼합리스트, 매트릭스 리스트
+-sequences - List
+	배열형식
+	인덱싱
+	슬라이싱
+	연결(+)과 반복(*) 연산
+	자료확인 : in 연산자
+---
+#Python의 리스트의 함수: 추가, 병합, 삽입, 삭제
+x.append()
+x.append([4,5]) >>>[1, 2, 3 , [4,5]]
+x.extend([4,5]) >>> [1, 2, 3, [4,5],4,5]
+x.insert(1, 70) >>> [1, 70, 2, 3, [4,5],4,5]
+x.remove(1) >>>  [70, 2, 3, [4,5],4,5]
+x.reverse() >>> [5, 4, [4,5], 3,2,70]
+
+--- 리스트의 수정
+season = []
+Season = list()
+season = ['ㅂ', 'ㅇㄹ', 'ㄱㅇ', 'ㄱㅇ']
+season.remove('ㅇㄹ')
+del season(인덱스) 
+season[0] = 'spring'
+
+--리스트의 함수
+a = [5, 4, 3, 2, 2, 1]
+len(a) >>> 자바는 a.length(), c언어는 sizeof(a)/a[0])
+max(a)
+min(a)
+a.count(2)
+a.sort()
+a.sort(reverse=True)
+a.clear
+리스트가 비어있을 경우 출력하면 >>> []
+
+#Python의 Set 중괄호{}
+-셋은 임의의 순서를 가진 중복되지 않은 요소들의 가변 집합
+-공집합은 {}가 아닌 set()함수로 만든다
+	({}는 딕셔너리)
+		(딕셔너리와 비슷하지만 KEY가 없이 VALUE만 존재)
+-집합 연산인 합집합, 교집합, 차집합, 대칭 차집합 연산이 가능하다.
+
+--- 셋의 생성과 집협연산
+a = {} >>> 딕셔너리
+print(type(a)) >>> <class'dict'>
+a=set()
+print(type(a) >>> <class'set'>
+a.add(1)
+a.add(2)
+a.add(3)
+a.add(2)
+print(a) >>> {1,2,3}
+b={3,4,5}
+print(a|b), print(a.union(b))
+print(a&b),print(a.intersection(b))
+print(a-b), print(a.difference(b))
+print(a^b),print(a.symmetric_difference(b)) >> 합집합에서 교집합만 뺀 것
+
+--셋 함수
+a.add('제주')
+a.update(['강화','진주']) >>> 요소 추가하고 출력 순서는 무작위
+a.remove('대전')
+a.clear()
+print("제주" in a) >>> True, False
+
+#Python의 Dictionay 중괄호{키:값}
+-딕셔너리는 순서가 없는 불변의 키와 가변의 값의 쌍으로 이루어진 객체들의 집합이다.(아이템 > 키:값)
+-키는 고유하며 대소문자를 구별한다.
+-키를 호출하면 값을 리턴하는 구조를 가진다.
+-Dictionay의 주요 함수
+	keys()
+	values()
+	items()
+	clear()
+	get(key)
+	has_key(key)
+
+country = {'대한민국':'서울', '중국':'베이징', '미국':'워싱턴'}
+print(country) >>> {'대한민국':'서울', '중국':'베이징', '미국':'워싱턴'}
+print(country.keys()) >>> dict_keys(['대한민국', '중국', '미국'])
+print(country.values()) >>>dict_values(['서울','베이징','워싱턴'])
+print(coutruy.items())>>>([('대한민국','서울'), {'중국','베이징),('미국','워싱턴')])
+print(coutnry.get('대한민국') >>> 서울
+country['대한민국'] = 'Seoul'
+print(country.get('대한민국')) >>> Seoul
+country.clear()
+print(country) >>> {}
+del country[요소] >>> 변수 삭제
+
+
+#파이썬 자료구조 정리
+sequence (Tuple, List, String)
+	배열 형식, 인덱싱, 슬라이싱, +* 연결 반복 연산, 자료확인 in 연산자
+Set
+Mapping (Dictionary)
+
+리스트 중복허용/순서있음/가변
+튜플	중복허용/순서있음/불변
+집합	중복불가/순서없음/가변
+딕셔너리 중복불거/순서없음/가변(값),불변(키)
+
+
