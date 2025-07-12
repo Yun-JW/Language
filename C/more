@@ -1,0 +1,86 @@
+### 03_연산자 ###
+printf("5>2 : %d\n", x>y); >>> 1 (거짓일떄는 0 출력)
+max = (5>3)? 5 : 2;
+파이썬( and, or) 자바,C(&&, ||)
+
+### 04_제어문&선택구조###
+파이썬에는 dowhile문과 switch 문이 없다.
+
+
+### 05_ 제어문 & 반복구조 ###
+START:
+	print("문자 하나를 입력(Q:종료: );
+	scanf("%c", &ch);
+	if(ch == 'Q')
+		goto END;
+	else
+		goto START;
+END: 
+
+### 06_배열 ###
+형식지정자
+%4.3f >>> 4는 최소 자리수(양수 오른쪽채움, 음수 오른쪽채움), 3은 소수점 자리수(반올림)
+%04.3f >>> 빈공간을 0으로 채움(이것도 왼쪽을 채움)
+
+***
+자바는 c와 동일
+파이썬은
+print("{:07.2f}" .format(-1.2))
+print(f"{-1.2:07.2f}")
+
+***
+c언어만 문자열 끝에 \0이 있다.
+\0은 공백을 의미하는 것이 아니라 NULL문자를 의미한다.
+										
+
+### 07_포인터 ###
+int *p1;
+int* p1;은 같은 것이다.
+
+--- enum
+enum Color{Red, GREEN, BLUE};
+void main(){
+	enum Color = GREEN;
+	printf("%d\n", c);
+}
+
+--- struct 정의 방법
+형식 1: 정의와 변수 선언을 분리
+struct Person {
+    char name[20];
+    int age;
+};
+struct Person p1;
+				
+형식 2: 정의와 변수 선언을 함께
+struct Person {
+    char name[20];
+    int age;
+} p1, p2;
+
+형식 3: typedef를 사용해 struct 이름 생략
+typedef struct {
+    char name[20];
+    int age;
+} Person;
+
+Person p1;
+
+형식 4: typedef + 구조체 이름 함께 사용
+typedef struct Person {
+    char name[20];
+    int age;
+} Person;
+
+Person p1;
+
+--- 동적할당
+malloc : 정한 바이트만큼 초기화 없이 메모리 할당(이전의 값 초기화 안됨)
+int* arr = (int*)malloc(3*sizeof(int));
+
+calloc : 초기값 0으로 초기화된 메모리 블록 할당 (개수 × 크기)
+int* arr = (int*)calloc(5, sizof(int)); // int 5개를 0으로 초기화하여 할당
+
+realloc : 기존 메모리 블록의 크기를 변경 (재할당)
+arr = (int*)realloc(arr, 10*sizeof(int));
+이 전보다 더 작은 메모리 값을 할당하면 배열로 치면 뒤의 인덱스 요소들의 데이터들이 날라간다.
