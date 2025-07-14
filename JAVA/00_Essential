@@ -1,0 +1,59 @@
+### 01_자바 기본 문법 ###
+System.out.print() >>> 기본
+System.out.println() >>> 줄바꿈
+System.out.printf() >>> 형식지정자 사용
+
+- 문자열 길이
+c : sizeof(a) / sizeof(char)
+java : a.length
+python : len(a)
+
+
+### 02_자바 연산자 제어문 ###
+- 주석처리
+c : //, /* */
+java : //, /* */
+python : #, """ """, ''' '''
+
+- 명칭
+	클래스명, 메소드명, 변수명, 배열명, 함수명
+	(관례) 클래스 이름의 경우 대문자로 시작
+		메소드나 필드, 변수의 이름은 소문자로 시작
+- 변수이름으로 $, _ 가능하다.
+- 자료형
+	기본형 : 정해진 자료의 값 자체
+	참조형 : 실제 값이 저장된 메모리 주소
+- 기본형
+	정수형 : byte(1), int(4), short(2), long(8)
+	실수형 : float(4), double(8)
+	문자형 : char(2) >>> unicode
+	논리형 : boolean(1) >>> true, false
+- 관계연산자 : instanceof
+	비트연산자 : >>> 자바에서 유일하게 있음
+- 배열 
+	int[] a = new int[5];
+	int[] a = new int[]{1, 2, 3, 4, 5};
+
+### 03_문자열과 배열 ###
+- a.equals(b) 함수
+- String strArr2 = new String("Java");
+- 문자열의 함수
+	char charAt(index)
+	 boolean equals(Object obj)
+	String replaece(char oldChar, char new Char)
+	static String valueOf(pare) >>> 숫자값을 문자열로 처리
+	int length() 
+
+Integer.valueOf(pare) >>>> 기본형을 객체형으로 변환 
+
+### 04_자바언어에 대한 이해 ###
+ Scanner sc = new Scanner(System.in);
+N1 = sc.nextInt();
+N2 = sc.nextInt();
+
+### 05_자바언어에 대한 이해2 ###
+-A instanceof B
+
+
+
+형변환 함수 , scanner 함수 
